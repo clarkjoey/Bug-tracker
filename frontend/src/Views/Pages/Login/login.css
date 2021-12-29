@@ -1,10 +1,8 @@
 .loginBG{
     width:100vw;
-    height:105vh;
-    background: url(../../images/mt-rainier.jpg);
+    height:100vh;
+    background: url(../../../images/mt-rainier.jpg);
     background-size: cover;
-    margin-left: -20.6vw;
-    margin-top:-27px;
     background-color: rgb(0, 0, 0, 0.356);
     background-blend-mode: multiply;
     background-attachment: fixed;

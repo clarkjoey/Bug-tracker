@@ -10,7 +10,7 @@ const slice = createSlice({
         createBugs:(state,actions)=>{
 
         },
-        updateBugs:(state,actions)=>{
+        updateBug:(state,actions)=>{
 
         },
         markComplete:(state,action)=>{
@@ -21,4 +21,4 @@ const slice = createSlice({
 
 export default slice.reducer;
 
-export const {getBugs,createBugs,updateBugs,markComplete} = slice.actions;
+export const {getBugs,createBugs,updateBug,markComplete} = slice.actions;

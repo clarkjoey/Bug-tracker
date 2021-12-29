@@ -12,7 +12,7 @@ const slice = createSlice({
             state.LoggedIn = true;
             state.admin = true;
         },
-        singOut:(state)=>{
+        signOut:(state)=>{
             state.LoggedIn = false;
             state.admin = false;
         },
@@ -24,4 +24,4 @@ const slice = createSlice({
 
 export default slice.reducer;
 
-export const {signIn,singOut,createUser} = slice.actions;
+export const {signIn,signOut,createUser} = slice.actions;

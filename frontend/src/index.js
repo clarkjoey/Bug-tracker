@@ -11,19 +11,23 @@ import bugReducer from './Controllers/Redux/bugSlice'
 import userReducer from './Controllers/Redux/userSlice'
 
 // Redux configure
-const reducer = combineReducers({
-  auth:authReducer,
-  bug:bugReducer,
-  user:userReducer,
+const rootReducer = combineReducers({
+  auth: authReducer,
+  bugs: bugReducer,
+  user: userReducer,
 });
 
 const store = configureStore({
-  reducer
+  reducer: rootReducer,
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+    serializableCheck: false
+  }),
 });
 
 ReactDOM.render(
     <Provider store={store}>
       <App />
-    </Provider>,
+    </Provider>
+    ,
   document.getElementById('root')
 );

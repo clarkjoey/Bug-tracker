@@ -12,8 +12,8 @@ export function retrieveBugs() {
         assigned:"Joe Clark",
         creator:"Alex Cordero",
         priority: 1,
-        time:"23:45",
-    }));
+        time:"23:45"
+    }))
     data.push(new bugModel({
         _id:23456790,
         name:"Won't Load",
@@ -23,9 +23,9 @@ export function retrieveBugs() {
         assigned:"Joe Clark",
         creator:"Alex Cordero",
         priority: 3,
-        time:"23:49",
-    }));
+        time:"23:49"
+    }))
 
-    let sorted = data.sort((a,b)=>{return a - b})
+    let sorted = data.sort((a,b)=>{return a.priority - b.priority})
     return sorted;
 }
