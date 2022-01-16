@@ -1,9 +1,17 @@
 import bugModel from '../Models/bugModel'
 
-export function retrieveBugs() {
+export async function retrieveBugs() {
     let data = [];
+    let response = await fetch('http://localhost:3500/bugs/', {method: 'GET'});
+    let result = await response.json();
+    for (let i=0;i<result.length;i++) {
+        data.push(new bugModel(result[i]))
+    }
+    setTimeout(() => {console.log(data)}, 1000);
+    return data;
 
-    data.push(new bugModel({
+
+/*     data.push(new bugModel({
         _id:23456789,
         name:"Crash on Load",
         details:"Crashes after 3 seconds",
@@ -27,5 +35,8 @@ export function retrieveBugs() {
     }))
 
     let sorted = data.sort((a,b)=>{return a.priority - b.priority})
-    return sorted;
+    setTimeout(() => {console.log(sorted)}, 3000);
+    return sorted; */
+
+    // return fetchBugs().then(result => {console.log(result)}).catch(err => console.err(err));
 }
